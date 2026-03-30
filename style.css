@@ -107,35 +107,74 @@ img {
 }
 
 /* WSZYSTKIE ZASADY DLA TELEFONU W JEDNYM MIEJSCU */
+/* --- PEŁNA SEKCJA DLA URZĄDZEŃ MOBILNYCH --- */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 35px;
-    height: auto;
-    padding: 20px 0;
-  }
   
+  /* Naprawa wielkiego nagłówka na górze */
+  h1 {
+    font-size: 32px;
+    height: auto;
+    padding: 20px 10px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* Naprawa podtytułów (Grupy, Spis drużyn) */
   h2 {
     font-size: 28px;
+    margin-top: 30px;
   }
 
-  .jaka_gr {
-    font-size: 22px;
+  /* Sekcja GRUPY - ustawiamy tabele jedna pod drugą */
+ .gr_tabela {
+    display: flex;         /* Upewnij się, że to jest flex */
+    flex-direction: column; /* To MUSI tu być, żeby tabela była pod tabelą */
+    align-items: center; 
+    gap: 30px;
   }
 
-  .gr_tabela {
-    flex-direction: column; 
-    align-items: center;
-    gap: 20px;
-  }
-
-  .gr_tabela table {
-    width: 95%; 
+.gr_tabela table {
+    width: 90% !important; /* !important wymusi tę szerokość, jeśli coś ją blokuje */
     height: auto;
   }
-  
-  /* Dodaj to, żeby napisy w drużynach nie były za małe na telefonie */
+
+  .gr_tabela th, .gr_tabela td {
+    padding: 10px 5px; /* Mniejszy odstęp w komórkach, żeby zaoszczędzić miejsce */
+  }
+
+  /* Sekcja SPIS DRUŻYN - ustawiamy kolumny w pionie */
+.druzyny {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .druzyny > div {
-    max-width: 90%;
-    flex: none;
+    flex: none;       /* Wyłączamy automatyczne dzielenie rzędu */
+    width: 100%;      /* Każda drużyna dostaje całą szerokość ekranu */
+    max-width: 100%;  /* Kasujemy limit 300px z komputera */
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .druzyny ul {
+    padding: 0;      /* Usuwamy domyślne wcięcie listy, żeby wyśrodkować nicki */
+    list-style-type: none;
+  }
+
+  /* Naprawa obrazka (logo), żeby nie był za mały/za duży na telefonie */
+  img {
+    max-width: 60%; 
+    margin-bottom: 15px;
+  }
+
+  /* Naprawa zielonego paska grupy, jeśli go używasz */
+  .Grupy {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .jaka_gr {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }
