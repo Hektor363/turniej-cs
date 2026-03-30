@@ -1,0 +1,94 @@
+body{
+  background-color: black; 
+  color: orange; 
+}
+
+h1{
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65px;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+}
+
+img {
+  max-width: 40%;
+  height: auto;
+  display: block;    
+  margin-left: auto;  
+  margin-right: auto; 
+}
+
+/* h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+} */
+
+.druzyny{
+  display: flex;
+  flex-wrap: wrap;           
+  justify-content: space-evenly; 
+  align-items: flex-start;    
+  gap: 30px;                  
+  padding: 20px;
+}
+
+.druzyny > div {
+  flex: 1;           
+  max-width: 300px;  
+  margin: 0 10px;   
+}
+
+.druzyny li{
+  margin-bottom: 5px;
+}
+
+
+.Grupy{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  padding: auto;
+  background-color: rgba(129, 238, 5, 0.815)y;
+  border-radius: 10px;
+}
+
+.gr_tabela{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.gr_tabela table{
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  width: 45%;
+  height: 200px;
+}
+
+.gr_tabela th, .gr_tabela td{
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid#333
+}
+
+.gr_tabela th{
+  color: #888;
+}
+
+.jaka_gr{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30px;
+}
