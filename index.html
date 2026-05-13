@@ -24,7 +24,7 @@
                     <th>Pkt</th>
                 <tr>    
             </thead>
-            <tbody>
+            <tbody id ="groupA">
                <tr>
                     <td>1</td>
                     <td>Drinkersi</td>
@@ -62,7 +62,7 @@
                     <th>Pkt</th>
                 <tr>    
             </thead>
-            <tbody>
+            <tbody id ="groupB">
                <tr>
                     <td>1</td>
                     <td>Virtus UPO</td>
@@ -107,10 +107,10 @@
                     <th>Pkt</th>
                 <tr>    
             </thead>
-            <tbody>
+            <tbody id ="groupC">
                <tr>
                     <td>1</td>
-                    <td>Lizard🦎</td>
+                    <td>Lizard</td>
                     <td>0-0</td>
                     <td>0</td>
                </tr>
@@ -145,7 +145,7 @@
                     <th>Pkt</th>
                 <tr>    
             </thead>
-            <tbody>
+            <tbody id ="groupD">
                <tr>
                     <td>1</td>
                     <td>ChinaSquad</td>
@@ -170,7 +170,7 @@
         </table>
 
     </div>
-      
+    
     <h2>Spis drużyn</h2>
     <div class="druzyny">
         <div  class="dupa">
@@ -197,7 +197,7 @@
             </ul>
         </div>
            <div class="dupa">
-            <h3>Borsuki europejskie 🦡</h3>
+            <h3>Borsuki europejskie</h3>
                  <ul>
                 <li>Boosiu</li>
                 <li>Evro</li>
@@ -225,8 +225,8 @@
                 <li>Helenka</li>
                 <li>Rabajo</li>
                 <li>M</li>
-                <li>Ben</li>
-                <li>Wampir z Bytomia</li>
+                <li>Happy Maciek</li>
+                <li>Wampir z Bytowa</li>
             </ul>
         </div>
            <div class="dupa">
@@ -244,15 +244,16 @@
            <div class="dupa">
             <h3>Damy_Rad3</h3>
                  <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>1M_V_K1</li>
+                <li>Ez player</li>
+                <li>Szeregowy Jnusz sram</li>
+                <li>Nie ma żartów</li>
+                <li>Maciuj</li>
+                <li>rez: PashaBiceps</li>
             </ul>
         </div>
            <div class="dupa">
-            <h3>Lizard🦎</h3>
+            <h3>Lizard</h3>
             <ul>
                 <li>Tobiasz</li>
                 <li>Mateo</li>
@@ -300,11 +301,11 @@
            <div class="dupa">
                 <h3>FC Drzewce po nalewce</h3>
              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Żerżeń Afrykański</li>
+                <li>JPM</li>
+                <li>KOŃDZIAD</li>
+                <li>Winogron</li>
+                <li>Ti Kurvë</li>
             </ul>
             </div>
     </div>
@@ -344,5 +345,50 @@
          
     </div>
      
+<script>
+  // Podczas testów używamy localhost, potem zmienisz na Render
+  const BACKEND_URL = "https://turniej-csgo-backend.onrender.com/teams";
+
+  fetch(BACKEND_URL)
+    .then(res => {
+      if (!res.ok) throw new Error("Problem z połączeniem z serwerem");
+      return res.json();
+    })
+    .then(data => {
+      const groups = {
+        A: document.getElementById("groupA"),
+        B: document.getElementById("groupB"),
+        C: document.getElementById("groupC"),
+        D: document.getElementById("groupD"),
+      };
+
+      // Czyścimy tabele przed dodaniem danych (żeby się nie dublowały)
+      Object.values(groups).forEach(g => { if(g) g.innerHTML = ""; });
+
+      let counters = { A: 1, B: 1, C: 1, D: 1 };
+
+      data.records.forEach(team => {
+        const fields = team.fields;
+        const g = fields.Group; // Sprawdź czy w Airtable jest "Group"
+
+        if (groups[g]) {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${counters[g]}</td>
+            <td>${fields.Name || "Brak nazwy"}</td>
+            <td>${fields.Wins || 0}-${fields.Losses || 0}</td>
+            <td>${fields.Points || 0}</td>
+          `;
+          groups[g].appendChild(row);
+          counters[g]++;
+        }
+      });
+      console.log("Dane załadowane pomyślnie!");
+    })
+    .catch(err => {
+      console.error("Błąd ładowania danych:", err);
+    });
+</script>
+
 </body>
 </html>
