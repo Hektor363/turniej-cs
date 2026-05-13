@@ -1,14 +1,7 @@
 body{
-  background-color: black;
-  color: orange;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background-color: black; 
+  color: orange; 
 }
-
-/* =========================
-   GŁÓWNY TYTUŁ
-========================= */
 
 h1{
   height: 100px;
@@ -16,12 +9,7 @@ h1{
   justify-content: center;
   align-items: center;
   font-size: 65px;
-  text-align: center;
 }
-
-/* =========================
-   PODTYTUŁY
-========================= */
 
 h2{
   display: flex;
@@ -31,263 +19,146 @@ h2{
   color: white;
 }
 
-/* =========================
-   OBRAZEK
-========================= */
 
 img {
   max-width: 40%;
   height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;    
+  margin-left: auto;  
+  margin-right: auto; 
 }
 
-/* =========================
-   TABELKI GRUP
-========================= */
 
-.gr_tabela{
+.druzyny{
+  display: flex;
+  flex-wrap: wrap;           
+  justify-content: space-evenly; 
+  align-items: flex-start;    
+  gap: 30px;                  
+  padding: 20px;
+}
+
+.druzyny > div {
+  flex: 1;           
+  max-width: 300px;  
+  margin: 0 10px;   
+}
+
+.druzyny li{
+  margin-bottom: 5px;
+}
+
+
+.Grupy{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  padding: auto;
+  background-color: rgba(129, 238, 5, 0.815);
+  border-radius: 10px;
+}
+
+ .gr_tabela{
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
-  gap: 30px;
 }
 
 .gr_tabela table{
   background-color: #1a1a1a;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 45%;
   height: 200px;
-  color: white;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(255,140,0,.15);
-}
+} 
 
-.gr_tabela th,
-.gr_tabela td{
+
+
+.gr_tabela th, .gr_tabela td{
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid#333;
 }
 
 .gr_tabela th{
-  color: orange;
-  background-color: #111;
+  color: #888;
 }
-
-.gr_tabela tr:hover{
-  background-color: #222;
-}
-
-/* =========================
-   NAZWY GRUP
-========================= */
 
 .jaka_gr{
   display:flex;
   justify-content: space-around;
   align-items: center;
   font-size: 30px;
-  color: orange;
-  font-weight: bold;
 }
 
-/* =========================
-   DRABINKA TURNIEJOWA
-========================= */
-
-.bracket-section {
-  padding: 60px 20px;
-  overflow-x: auto;
-}
-
-.bracket-title {
-  text-align: center;
-  color: orange;
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 60px;
-}
-
-.tournament-bracket {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  min-width: 1000px;
-}
-
-.round {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.round-title {
-  text-align: center;
-  color: #38bdf8;
-  font-size: 30px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.match {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.team {
-  background: #1e293b;
-  border: 2px solid #38bdf8;
-  border-radius: 10px;
-  padding: 15px 25px;
-  min-width: 240px;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  transition: 0.2s;
-  box-shadow: 0 0 12px rgba(56,189,248,.25);
-}
-
-.team:hover {
-  transform: scale(1.05);
-  background: #334155;
-}
-
-/* półfinały niżej */
-.round:nth-child(2) {
-  margin-top: 120px;
-}
-
-/* finał jeszcze niżej */
-.round:nth-child(3) {
-  margin-top: 260px;
-}
-
-/* =========================
-   SPIS DRUŻYN
-========================= */
-
-.druzyny{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 30px;
-  padding: 20px;
-}
-
-.druzyny > div {
-  flex: 1;
-  max-width: 300px;
-  margin: 0 10px;
-  background-color: #111;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,140,0,.12);
-}
-
-.druzyny h3{
-  color: orange;
-  text-align: center;
-}
-
-.druzyny ul{
-  padding-left: 20px;
-}
-
-.druzyny li{
-  margin-bottom: 5px;
-  color: white;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
+/* WSZYSTKIE ZASADY DLA TELEFONU W JEDNYM MIEJSCU */
+/* --- PEŁNA SEKCJA DLA URZĄDZEŃ MOBILNYCH --- */
+@media (max-width: 768px) {
+  
+  /* Naprawa wielkiego nagłówka na górze */
   h1 {
     font-size: 32px;
     height: auto;
     padding: 20px 10px;
+    text-align: center;
     line-height: 1.2;
   }
 
+  /* Naprawa podtytułów (Grupy, Spis drużyn) */
   h2 {
     font-size: 28px;
     margin-top: 30px;
   }
 
-  img {
-    max-width: 70%;
-    margin-bottom: 20px;
+  /* Sekcja GRUPY - ustawiamy tabele jedna pod drugą */
+ .gr_tabela {
+    display: flex;         /* Upewnij się, że to jest flex */
+    flex-direction: column; /* To MUSI tu być, żeby tabela była pod tabelą */
+    align-items: center; 
+    gap: 30px;
   }
 
-  .jaka_gr {
-    flex-direction: column;
-    font-size: 22px;
-    gap: 10px;
-  }
-
-  /* tabelki */
-  .gr_tabela {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gr_tabela table {
-    width: 90%;
+.gr_tabela table {
+    width: 90% !important; /* !important wymusi tę szerokość, jeśli coś ją blokuje */
     height: auto;
   }
 
-  .gr_tabela th,
-  .gr_tabela td{
-    padding: 10px 6px;
-    font-size: 14px;
+  .gr_tabela th, .gr_tabela td {
+    padding: 10px 5px; /* Mniejszy odstęp w komórkach, żeby zaoszczędzić miejsce */
   }
 
-  /* drabinka */
-  .tournament-bracket {
-    flex-direction: column;
-    min-width: auto;
-    gap: 50px;
-  }
-
-  .round:nth-child(2),
-  .round:nth-child(3) {
-    margin-top: 0;
-  }
-
-  .team {
-    min-width: 260px;
-  }
-
-  .bracket-title {
-    font-size: 34px;
-  }
-
-  .round-title {
-    font-size: 24px;
-  }
-
-  /* drużyny */
-  .druzyny {
+  /* Sekcja SPIS DRUŻYN - ustawiamy kolumny w pionie */
+.druzyny {
     flex-direction: column;
     align-items: center;
   }
 
   .druzyny > div {
-    width: 90%;
-    max-width: 90%;
+    flex: none;       /* Wyłączamy automatyczne dzielenie rzędu */
+    width: 100%;      /* Każda drużyna dostaje całą szerokość ekranu */
+    max-width: 100%;  /* Kasujemy limit 300px z komputera */
     text-align: center;
+    margin: 20px 0;
   }
 
   .druzyny ul {
+    padding: 0;      /* Usuwamy domyślne wcięcie listy, żeby wyśrodkować nicki */
     list-style-type: none;
-    padding: 0;
+  }
+
+  /* Naprawa obrazka (logo), żeby nie był za mały/za duży na telefonie */
+  img {
+    max-width: 60%; 
+    margin-bottom: 15px;
+  }
+
+  /* Naprawa zielonego paska grupy, jeśli go używasz */
+  .Grupy {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .jaka_gr {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }
