@@ -1,319 +1,348 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turniej CS:GO WCY 2026</title>
-
-  <style>
-    body{
-      background-color: black;
-      color: orange;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1{
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 65px;
-      text-align: center;
-    }
-
-    h2{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 50px;
-      color: white;
-    }
-
-    img {
-      max-width: 40%;
-      height: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* =========================
-       DRABINKA TURNIEJOWA
-    ========================= */
-
-    .bracket-section {
-      padding: 60px 20px;
-      overflow-x: auto;
-    }
-
-    .bracket-title {
-      text-align: center;
-      color: orange;
-      font-size: 48px;
-      margin-bottom: 60px;
-    }
-
-    .tournament-bracket {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 100px;
-      min-width: 1000px;
-    }
-
-    .round {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .round-title {
-      text-align: center;
-      color: #38bdf8;
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-
-    .match {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .team {
-      background: #1e293b;
-      border: 2px solid #38bdf8;
-      border-radius: 10px;
-      padding: 15px 25px;
-      min-width: 240px;
-      text-align: center;
-      font-weight: bold;
-      color: white;
-      transition: 0.2s;
-      box-shadow: 0 0 12px rgba(56,189,248,.25);
-    }
-
-    .team:hover {
-      transform: scale(1.05);
-      background: #334155;
-    }
-
-    .round:nth-child(2) {
-      margin-top: 120px;
-    }
-
-    .round:nth-child(3) {
-      margin-top: 260px;
-    }
-
-    /* =========================
-       DRUŻYNY
-    ========================= */
-
-    .druzyny{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      align-items: flex-start;
-      gap: 30px;
-      padding: 20px;
-    }
-
-    .druzyny > div {
-      flex: 1;
-      max-width: 300px;
-      margin: 0 10px;
-    }
-
-    .druzyny li{
-      margin-bottom: 5px;
-    }
-
-    /* =========================
-       TABELE
-    ========================= */
-
-    .gr_tabela{
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 30px;
-    }
-
-    .gr_tabela table{
-      background-color: #1a1a1a;
-      border-radius: 5px;
-      width: 45%;
-      height: 200px;
-      color: white;
-    }
-
-    .gr_tabela th,
-    .gr_tabela td{
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid #333;
-    }
-
-    .gr_tabela th{
-      color: #888;
-    }
-
-    .jaka_gr{
-      display:flex;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 30px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      h1 {
-        font-size: 32px;
-        height: auto;
-        padding: 20px 10px;
-      }
-
-      h2 {
-        font-size: 28px;
-      }
-
-      img {
-        max-width: 70%;
-      }
-
-      .gr_tabela {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .gr_tabela table {
-        width: 90%;
-        height: auto;
-      }
-
-      .druzyny {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .druzyny > div {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-      }
-
-      .druzyny ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .tournament-bracket {
-        flex-direction: column;
-        min-width: auto;
-        gap: 50px;
-      }
-
-      .round:nth-child(2),
-      .round:nth-child(3) {
-        margin-top: 0;
-      }
-
-      .team {
-        min-width: 260px;
-      }
-    }
-
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turniej CS:GO WCY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <h1>Turniej CS:GO WCY 2026</h1>
+    <img src="img\1.png" alt="zdjecie cs:go WCY">
+    <h2>Grupy</h2>
+        <div class="jaka_gr">
+        <p>Grupa A</p>
+        <p>Grupa B</p>
+        </div>
+        <div class="gr_tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Drużyna</th>
+                    <th>W-P</th>
+                    <th>Pkt</th>
+                <tr>    
+            </thead>
+            <tbody>
+               <tr>
+                    <td>1</td>
+                    <td>Drinkersi</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>2</td>
+                    <td>Damy_Rad3</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>3</td>
+                    <td>Gity</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>4</td>
+                    <td>Łomaskie Wilki</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               </tbody>
+            </tbody>
+        </table>
+        
+ <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Buhaje</th>
+                    <th>W-P</th>
+                    <th>Pkt</th>
+                <tr>    
+            </thead>
+            <tbody>
+               <tr>
+                    <td>1</td>
+                    <td>Virtus UPO</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>2</td>
+                    <td>Bieluchy</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>3</td>
+                    <td>KCMTL</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>4</td>
+                    <td>Buhaje</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               </tbody>
+            </tbody>
+        </table>
 
-  <h1>Turniej CS:GO WCY 2026</h1>
-
-  <img src="img/1.png" alt="Turniej CS">
-
-  <!-- DRABINKA -->
-
-  <section class="bracket-section">
-
-    <div class="bracket-title">
-      Drabinka Turniejowa
     </div>
-
-    <div class="tournament-bracket">
-
-      <!-- Ćwierćfinały -->
-      <div class="round">
-
-        <div class="round-title">
-          Ćwierćfinały
+        <div class="jaka_gr">
+        <p>Grupa C</p>
+        <p>Grupa D</p>
         </div>
-
-        <div class="match">
-          <div class="team">Drinkersi</div>
-          <div class="team">Damy_Rad3</div>
-        </div>
-
-        <div class="match">
-          <div class="team">Virtus UPO</div>
-          <div class="team">Bieluchy</div>
-        </div>
-
-        <div class="match">
-          <div class="team">Lizard</div>
-          <div class="team">FURIOUS BISONS</div>
-        </div>
-
-        <div class="match">
-          <div class="team">ChinaSquad</div>
-          <div class="team">Kantares</div>
-        </div>
-
-      </div>
-
-      <!-- Półfinały -->
-      <div class="round">
-
-        <div class="round-title">
-          Półfinały
-        </div>
-
-        <div class="match">
-          <div class="team">Zwycięzca M1</div>
-          <div class="team">Zwycięzca M2</div>
-        </div>
-
-        <div class="match">
-          <div class="team">Zwycięzca M3</div>
-          <div class="team">Zwycięzca M4</div>
-        </div>
-
-      </div>
-
-      <!-- Finał -->
-      <div class="round">
-
-        <div class="round-title">
-          Finał
-        </div>
-
-        <div class="match">
-          <div class="team">Finalista 1</div>
-          <div class="team">Finalista 2</div>
-        </div>
-
-      </div>
+     <div class="gr_tabela">
+       
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Drużyna</th>
+                    <th>W-P</th>
+                    <th>Pkt</th>
+                <tr>    
+            </thead>
+            <tbody>
+               <tr>
+                    <td>1</td>
+                    <td>Lizard🦎</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>2</td>
+                    <td>FURIOUS BISONS</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>3</td>
+                    <td>Mossad Tactics</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>4</td>
+                    <td>druzyna4</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               </tbody>
+            </tbody>
+        </table>
+        
+ <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Drużyna</th>
+                    <th>W-P</th>
+                    <th>Pkt</th>
+                <tr>    
+            </thead>
+            <tbody>
+               <tr>
+                    <td>1</td>
+                    <td>ChinaSquad</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>2</td>
+                    <td>Kantares</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+               <tr>
+                    <td>3</td>
+                    <td>Borsuki Europejskie</td>
+                    <td>0-0</td>
+                    <td>0</td>
+               </tr>
+        
+               </tbody>
+            </tbody>
+        </table>
 
     </div>
-
-  </section>
-
+      
+    <h2>Spis drużyn</h2>
+    <div class="druzyny">
+        <div  class="dupa">
+            <h3>Bieluchy</h3>
+        
+            <ul>
+                <li>Tobiasz</li>
+                <li>Mateo</li>
+                <li>D Piddy</li>
+                <li>Karlie Chirk</li>
+                <li>GrekTerrorysta</li>
+                <li>rez: Boe Jiden</li>
+            </ul>
+        </div>
+        <div class="dupa">
+            <h3>Mossad Tactics</h3>
+                 <ul>
+                <li>merkoo</li>
+                <li>Fred</li>
+                <li>Maku</li>
+                <li>taktyk oficjalnie</li>
+                <li>Bocaj</li>
+                <li>rez: 23ADR Shaky Aim Oficjalnie</li>
+            </ul>
+        </div>
+           <div class="dupa">
+            <h3>Borsuki europejskie 🦡</h3>
+                 <ul>
+                <li>Boosiu</li>
+                <li>Evro</li>
+                <li>GravityBong1</li>
+                <li>Beton Biceps</li>
+                <li>DominacjaAnalna69</li>
+            </ul>
+        </div>
+          <div class="dupa">
+            <h3>Gity</h3>
+            <ul>
+                <li>Sumik1408</li>
+                <li>antek</li>
+                <li>wik</li>
+                <li>trąbe miałeś na mordzie</li>
+                <li>kenyzuM</li>
+                <li>rez: Kamil</li>
+            </ul>
+        </div>
+    </div>
+      <div class="druzyny">
+        <div class="dupa">
+            <h3>KCTML</h3>
+                 <ul>
+                <li>Helenka</li>
+                <li>Rabajo</li>
+                <li>M</li>
+                <li>Ben</li>
+                <li>Wampir z Bytomia</li>
+            </ul>
+        </div>
+           <div class="dupa">
+            <h3>Kantares</h3>
+                 <ul>
+                <li>$¡₩¥_𝕯¥𝔐</li>
+                <li>marjuż</li>
+                <li>Czorny</li>
+                <li>maviek_</li>
+                <li>Luzak Kondzio</li>
+                <li>rez: BMW 525xd 218hp</li>
+                <li>rez: batoreq</li>
+            </ul>
+        </div>
+           <div class="dupa">
+            <h3>Damy_Rad3</h3>
+                 <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+           <div class="dupa">
+            <h3>Lizard🦎</h3>
+            <ul>
+                <li>Tobiasz</li>
+                <li>Mateo</li>
+                <li>D Piddy</li>
+                <li>Karlie Chirk</li>
+                <li>GrekTerrorysta</li>
+                <li>rez: Boe Jiden</li>
+            </ul>
+        </div>
+    </div>
+      <div class="druzyny">
+        <div class="dupa">
+            <h3>FURIOUS BISONS</h3>
+            <ul>
+                <li>RoGeR</li>
+                <li>mattheV14</li>
+                <li>Qbix</li>
+                <li>testicular torsion</li>
+                <li>kiedropk</li>
+                <li>rez: Ruben Zuno Arce</li>
+            </ul>
+        </div>
+        <div class="dupa">
+            <h3>Łomaskie Wilki</h3>
+                 <ul>
+                <li>nob</li>
+                <li>neru</li>
+                <li>solirty_</li>
+                <li>Zyziu</li>
+                <li>alexis sandwich</li>
+                <li>rez: pigguh</li>
+                <li>rez: kubixon</li>
+            </ul>
+        </div>
+           <div class="dupa">
+            <h3>Buhaje</h3>
+                 <ul>
+                <li>WierzbiQ</li>
+                <li>CheSter^^</li>
+                <li>tamin_pl</li>
+                <li>øz</li>
+                <li>Mr.RM</li>
+            </ul>
+        </div>
+           <div class="dupa">
+                <h3>FC Drzewce po nalewce</h3>
+             <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            </div>
+    </div>
+      <div class="druzyny">
+        <div class="dupa">
+            <h3>Drinkersi</h3>
+            <ul>
+                <li>DRNKS Faron</li>
+                <li>dRnKS cHOy StYzF</li>
+                <li>EM WU</li>
+                <li>Hawi</li>
+                <li>ErykKanciano</li>
+                <li>rez: PINKMAN</li>
+            </ul>
+        </div>
+        <div class="dupa">
+            <h3>ChinaSquad</h3>
+                 <ul>
+                <li>Misiek13</li>
+                <li>OutIsMus</li>
+                <li>piotr2015</li>
+                <li>vtwin_89</li>
+                <li>AnalnyDewastator</li>
+            </ul>
+        </div>
+           <div class="dupa">
+            <h3>Virtus UPO:</h3>
+                 <ul>
+                <li>allover</li>
+                <li>mcbappe</li>
+                <li>gromadnik</li>
+                <li>B@kuś</li>
+                <li>screeck</li>
+                <li>rez: Dr. Eggman</li>
+            </ul>
+        </div>
+         
+    </div>
+     
 </body>
 </html>
