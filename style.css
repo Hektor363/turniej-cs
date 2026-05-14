@@ -352,35 +352,57 @@ img {
 
 /* PIONOWE ŁĄCZENIA */
 
+/* ===================================== */
+/* PROFESJONALNE ŁĄCZENIA BRACKET */
+/* ===================================== */
+
+/* ĆWIERĆFINAŁY */
+
 .playoff-round:first-child .playoff-match:nth-child(1)::before,
 .playoff-round:first-child .playoff-match:nth-child(3)::before{
+
     content:"";
 
     position:absolute;
 
-    right:-62px;
+    right:-55px;
     top:50%;
 
     width:2px;
-    height:165px;
+    height:200px;
 
     background:orange;
 }
 
+/* PÓŁFINAŁ */
+
 .semifinal-round .playoff-match:nth-child(1)::before{
+
     content:"";
 
     position:absolute;
 
-    right:-62px;
+    right:-55px;
     top:50%;
 
     width:2px;
-    height:305px;
+    height:365px;
 
     background:gold;
 }
 
+/* LEPSZE LINIE POZIOME */
+
+.playoff-round:first-child .playoff-match::after,
+.semifinal-round .playoff-match::after{
+
+    height:3px;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 0 8px rgba(255,180,0,0.4);
+}
 /* ZWYCIĘZCA */
 
 .playoff-team.winner{
