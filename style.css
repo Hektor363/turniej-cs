@@ -19,7 +19,6 @@ h2{
   color: white;
 }
 
-
 img {
   max-width: 40%;
   height: auto;
@@ -27,7 +26,6 @@ img {
   margin-left: auto;  
   margin-right: auto; 
 }
-
 
 .druzyny{
   display: flex;
@@ -48,7 +46,6 @@ img {
   margin-bottom: 5px;
 }
 
-
 .Grupy{
   display: flex;
   justify-content:space-around;
@@ -58,7 +55,7 @@ img {
   border-radius: 10px;
 }
 
- .gr_tabela{
+.gr_tabela{
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
@@ -74,7 +71,7 @@ img {
 .gr_tabela th, .gr_tabela td{
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid#333;
+  border-bottom: 1px solid #333;
 }
 
 .gr_tabela th{
@@ -88,79 +85,6 @@ img {
   font-size: 30px;
 }
 
-/* WSZYSTKIE ZASADY DLA TELEFONU W JEDNYM MIEJSCU */
-/* --- PEŁNA SEKCJA DLA URZĄDZEŃ MOBILNYCH --- */
-@media (max-width: 768px) {
-  
-  /* Naprawa wielkiego nagłówka na górze */
-  h1 {
-    font-size: 32px;
-    height: auto;
-    padding: 20px 10px;
-    text-align: center;
-    line-height: 1.2;
-  }
-
-  /* Naprawa podtytułów (Grupy, Spis drużyn) */
-  h2 {
-    font-size: 28px;
-    margin-top: 30px;
-  }
-
-  /* Sekcja GRUPY - ustawiamy tabele jedna pod drugą */
- .gr_tabela {
-    display: flex;         /* Upewnij się, że to jest flex */
-    flex-direction: column; /* To MUSI tu być, żeby tabela była pod tabelą */
-    align-items: center; 
-    gap: 30px;
-  }
-
-.gr_tabela table {
-    width: 90% !important; /* !important wymusi tę szerokość, jeśli coś ją blokuje */
-    height: auto;
-  }
-
-  .gr_tabela th, .gr_tabela td {
-    padding: 10px 5px; /* Mniejszy odstęp w komórkach, żeby zaoszczędzić miejsce */
-  }
-
-  /* Sekcja SPIS DRUŻYN - ustawiamy kolumny w pionie */
-.druzyny {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .druzyny > div {
-    flex: none;       /* Wyłączamy automatyczne dzielenie rzędu */
-    width: 100%;      /* Każda drużyna dostaje całą szerokość ekranu */
-    max-width: 100%;  /* Kasujemy limit 300px z komputera */
-    text-align: center;
-    margin: 20px 0;
-  }
-
-  .druzyny ul {
-    padding: 0;      /* Usuwamy domyślne wcięcie listy, żeby wyśrodkować nicki */
-    list-style-type: none;
-  }
-
-  /* Naprawa obrazka (logo), żeby nie był za mały/za duży na telefonie */
-  img {
-    max-width: 60%; 
-    margin-bottom: 15px;
-  }
-
-  /* Naprawa zielonego paska grupy, jeśli go używasz */
-  .Grupy {
-    flex-direction: column;
-    padding: 15px;
-  }
-  
-  .jaka_gr {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-}
-
 /* ===================================== */
 /* DRABINKA PLAYOFF */
 /* ===================================== */
@@ -169,9 +93,10 @@ img {
     display:flex;
     justify-content:center;
     align-items:flex-start;
+
     gap:90px;
 
-    padding:60px 20px;
+    padding:70px 20px;
 
     overflow-x:auto;
 }
@@ -190,7 +115,13 @@ img {
 }
 
 .final-round{
-    margin-top:310px;
+    margin-top:330px;
+}
+
+/* DRUGI PÓŁFINAŁ NIŻEJ */
+
+.semifinal-round .playoff-match:last-child{
+    margin-top:120px;
 }
 
 /* MECZE */
@@ -211,7 +142,16 @@ img {
     position:relative;
 
     box-shadow:
-        0 0 20px rgba(255,140,0,0.15);
+        0 0 20px rgba(255,140,0,0.12);
+
+    transition:0.25s;
+}
+
+.playoff-match:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(255,140,0,0.25);
 }
 
 /* TEAM */
@@ -244,165 +184,6 @@ img {
     transform:scale(1.02);
 }
 
-/* ======================== */
-/* ŁĄCZENIA */
-/* ======================== */
-
-.playoff-round:first-child .playoff-match::after{
-    content:"";
-
-    position:absolute;
-
-    top:50%;
-    right:-62px;
-
-    width:60px;
-    height:2px;
-
-    background:orange;
-}
-
-.semifinal-round .playoff-match::after{
-    content:"";
-
-    position:absolute;
-
-    top:50%;
-    right:-62px;
-
-    width:60px;
-    height:2px;
-
-    background:gold;
-}
-
-/* ======================== */
-/* FINAŁ */
-/* ======================== */
-
-.grand-final{
-    border:2px solid gold;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,215,0,0.14),
-            rgba(255,140,0,0.08)
-        );
-
-    box-shadow:
-        0 0 35px rgba(255,215,0,0.45);
-
-    transform:scale(1.08);
-}
-
-.grand-final::before{
-    content:"🏆";
-
-    position:absolute;
-
-    top:-38px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:34px;
-}
-
-/* ======================== */
-/* MOBILE */
-/* ======================== */
-
-@media (max-width:768px){
-
-    .playoff-bracket{
-        gap:60px;
-        padding:40px 20px;
-    }
-
-    .playoff-match{
-        width:200px;
-    }
-
-    .playoff-team{
-        font-size:14px;
-        padding:10px;
-    }
-
-    .semifinal-round{
-        margin-top:100px;
-    }
-
-    .final-round{
-        margin-top:220px;
-    }
-
-    .playoff-round:first-child .playoff-match::after,
-    .semifinal-round .playoff-match::after{
-
-        width:35px;
-
-        right:-37px;
-    }
-}
-
-/* ===================================== */
-/* DODATKOWE EFEKTY DRABINKI */
-/* ===================================== */
-
-/* PIONOWE ŁĄCZENIA */
-
-/* ===================================== */
-/* PROFESJONALNE ŁĄCZENIA BRACKET */
-/* ===================================== */
-
-/* ĆWIERĆFINAŁY */
-
-.playoff-round:first-child .playoff-match:nth-child(1)::before,
-.playoff-round:first-child .playoff-match:nth-child(3)::before{
-
-    content:"";
-
-    position:absolute;
-
-    right:-55px;
-    top:50%;
-
-    width:2px;
-    height:200px;
-
-    background:orange;
-}
-
-/* PÓŁFINAŁ */
-
-.semifinal-round .playoff-match:nth-child(1)::before{
-
-    content:"";
-
-    position:absolute;
-
-    right:-55px;
-    top:50%;
-
-    width:2px;
-    height:365px;
-
-    background:gold;
-}
-
-/* LEPSZE LINIE POZIOME */
-
-.playoff-round:first-child .playoff-match::after,
-.semifinal-round .playoff-match::after{
-
-    height:3px;
-
-    border-radius:10px;
-
-    box-shadow:
-        0 0 8px rgba(255,180,0,0.4);
-}
 /* ZWYCIĘZCA */
 
 .playoff-team.winner{
@@ -421,7 +202,40 @@ img {
         );
 }
 
-/* ANIMOWANY FINAŁ */
+/* FINAŁ */
+
+.grand-final{
+    border:2px solid gold;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,215,0,0.14),
+            rgba(255,140,0,0.08)
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,215,0,0.45);
+
+    transform:scale(1.08);
+
+    animation:finalGlow 2.5s infinite;
+}
+
+.grand-final::before{
+    content:"🏆";
+
+    position:absolute;
+
+    top:-38px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:34px;
+}
+
+/* ANIMACJA */
 
 @keyframes finalGlow{
 
@@ -441,6 +255,99 @@ img {
     }
 }
 
-.grand-final{
-    animation:finalGlow 2.5s infinite;
+/* ===================================== */
+/* MOBILE */
+/* ===================================== */
+
+@media (max-width: 768px) {
+  
+  h1 {
+    font-size: 32px;
+    height: auto;
+    padding: 20px 10px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .gr_tabela {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 30px;
+  }
+
+  .gr_tabela table {
+    width: 90% !important;
+    height: auto;
+  }
+
+  .gr_tabela th, .gr_tabela td {
+    padding: 10px 5px;
+  }
+
+  .druzyny {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .druzyny > div {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .druzyny ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  img {
+    max-width: 60%; 
+    margin-bottom: 15px;
+  }
+
+  .Grupy {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .jaka_gr {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* DRABINKA MOBILE */
+
+  .playoff-bracket{
+      gap:50px;
+      padding:40px 20px;
+  }
+
+  .playoff-match{
+      width:200px;
+  }
+
+  .playoff-team{
+      font-size:14px;
+      padding:10px;
+  }
+
+  .semifinal-round{
+      margin-top:100px;
+  }
+
+  .final-round{
+      margin-top:240px;
+  }
+
+  .semifinal-round .playoff-match:last-child{
+      margin-top:80px;
+  }
 }
