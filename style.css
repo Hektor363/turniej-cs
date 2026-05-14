@@ -160,3 +160,223 @@ img {
     margin-bottom: 10px;
   }
 }
+
+/* ================================= */
+/* DRABINKA HLTV / FACEIT STYLE */
+/* ================================= */
+
+.tournament-bracket{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;
+
+    padding:60px 30px;
+
+    overflow-x:auto;
+}
+
+/* RUNDA */
+
+.bracket-round{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+}
+
+.bracket-round h3{
+    text-align:center;
+    margin-bottom:40px;
+
+    color:orange;
+    font-size:30px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* MECZ */
+
+.bracket-match{
+    position:relative;
+
+    width:240px;
+
+    background:#111;
+
+    border:2px solid #2a2a2a;
+
+    border-radius:14px;
+
+    padding:10px;
+
+    margin:40px 0;
+
+    box-shadow:
+        0 0 15px rgba(255,140,0,0.15);
+
+    transition:0.3s;
+}
+
+.bracket-match:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(255,140,0,0.35);
+}
+
+/* DRUŻYNY */
+
+.bracket-team{
+    background:#1b1b1b;
+
+    border:1px solid #333;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    margin:8px 0;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:0.2s;
+}
+
+.bracket-team:hover{
+    background:#252525;
+}
+
+/* ZWYCIĘZCA */
+
+.winner{
+    border:1px solid orange;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,140,0,0.2),
+            rgba(255,140,0,0.05)
+        );
+
+    color:#ffb347;
+}
+
+/* ============================= */
+/* ŁĄCZENIA */
+/* ============================= */
+
+/* ćwierć -> pół */
+
+.bracket-round:first-child .bracket-match::after{
+    content:"";
+
+    position:absolute;
+
+    right:-62px;
+    top:50%;
+
+    width:60px;
+    height:2px;
+
+    background:orange;
+}
+
+/* pół -> finał */
+
+.semi .bracket-match::after{
+    content:"";
+
+    position:absolute;
+
+    right:-62px;
+    top:50%;
+
+    width:60px;
+    height:2px;
+
+    background:#ffcc00;
+}
+
+/* ODSTĘPY PÓŁFINAŁÓW */
+
+.semi{
+    justify-content:space-around;
+}
+
+.semi .bracket-match{
+    margin:110px 0;
+}
+
+/* FINAŁ */
+
+.final-round{
+    justify-content:center;
+}
+
+.grand-final{
+    transform:scale(1.08);
+
+    border:2px solid #ffcc00;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,215,0,0.12),
+            rgba(255,140,0,0.08)
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,215,0,0.35);
+}
+
+.grand-final .bracket-team{
+    border-color:#ffcc00;
+}
+
+/* GLOW FINAŁU */
+
+.grand-final::before{
+    content:"🏆";
+
+    position:absolute;
+
+    top:-28px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:30px;
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media (max-width:768px){
+
+    .tournament-bracket{
+        gap:50px;
+        padding:40px 15px;
+    }
+
+    .bracket-match{
+        width:190px;
+    }
+
+    .bracket-round h3{
+        font-size:20px;
+    }
+
+    .bracket-team{
+        font-size:14px;
+        padding:10px;
+    }
+
+    .bracket-round:first-child .bracket-match::after,
+    .semi .bracket-match::after{
+        width:35px;
+        right:-37px;
+    }
+}
