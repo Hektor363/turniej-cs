@@ -345,3 +345,80 @@ img {
         right:-37px;
     }
 }
+
+/* ===================================== */
+/* DODATKOWE EFEKTY DRABINKI */
+/* ===================================== */
+
+/* PIONOWE ŁĄCZENIA */
+
+.playoff-round:first-child .playoff-match:nth-child(1)::before,
+.playoff-round:first-child .playoff-match:nth-child(3)::before{
+    content:"";
+
+    position:absolute;
+
+    right:-62px;
+    top:50%;
+
+    width:2px;
+    height:165px;
+
+    background:orange;
+}
+
+.semifinal-round .playoff-match:nth-child(1)::before{
+    content:"";
+
+    position:absolute;
+
+    right:-62px;
+    top:50%;
+
+    width:2px;
+    height:305px;
+
+    background:gold;
+}
+
+/* ZWYCIĘZCA */
+
+.playoff-team.winner{
+    border-color:gold;
+
+    color:#ffd700 !important;
+
+    box-shadow:
+        0 0 12px rgba(255,215,0,0.35);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,215,0,0.12),
+            rgba(255,140,0,0.05)
+        );
+}
+
+/* ANIMOWANY FINAŁ */
+
+@keyframes finalGlow{
+
+    0%{
+        box-shadow:
+            0 0 20px rgba(255,215,0,0.3);
+    }
+
+    50%{
+        box-shadow:
+            0 0 45px rgba(255,215,0,0.7);
+    }
+
+    100%{
+        box-shadow:
+            0 0 20px rgba(255,215,0,0.3);
+    }
+}
+
+.grand-final{
+    animation:finalGlow 2.5s infinite;
+}
