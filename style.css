@@ -265,6 +265,32 @@ img {
     }
 }
 
+/* WALKA O 3. MIEJSCE */
+
+.third-place-round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 600px;
+}
+
+.third-place-label {
+    color: #cd7f32;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.third-place-match {
+    border-color: #cd7f32 !important;
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.4) !important;
+}
+
+.third-place-match:hover {
+    box-shadow: 0 0 30px rgba(205, 127, 50, 0.6) !important;
+}
+
 /* ===================================== */
 /* MOBILE */
 /* ===================================== */
